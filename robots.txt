@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ronnie2025.github.io/ai-remote-data-job-application-kit/sitemap.xml

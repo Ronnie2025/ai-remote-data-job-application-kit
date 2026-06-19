@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI远程数据兼职申请材料生成器 | AI Trainer中文语音标注</title>
+  <meta name="description" content="免费 AI 远程数据兼职申请材料生成器：判断 AI Trainer、中文语音评测、数据标注、转写质检方向，生成英文 Profile、Cover note、样音准备和投递追踪行。">
+  <link rel="canonical" href="https://ronnie2025.github.io/ai-remote-data-job-application-kit/">
+  <link rel="icon" href="assets/ai-remote-data-job-cover.png">
+  <meta property="og:title" content="AI远程数据兼职申请材料生成器">
+  <meta property="og:description" content="生成 AI Trainer、中文语音评测、数据标注和转写质检申请材料，并核对官方入口和风险边界。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ronnie2025.github.io/ai-remote-data-job-application-kit/">
+  <meta property="og:image" content="https://ronnie2025.github.io/ai-remote-data-job-application-kit/assets/ai-remote-data-job-cover.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI远程数据兼职申请材料生成器",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://ronnie2025.github.io/ai-remote-data-job-application-kit/",
+    "image": "https://ronnie2025.github.io/ai-remote-data-job-application-kit/assets/ai-remote-data-job-cover.png",
+    "description": "面向 AI Trainer、中文语音评测、数据标注、转写质检和语言数据审核申请者的免费浏览器端材料生成器。",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "AI 远程数据兼职申请材料生成器能保证录用吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不能。它只帮你整理岗位方向、英文 Profile、Cover note、样音准备和投递追踪字段，不承诺录用、收入、项目周期或平台审核结果。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "申请 AI Trainer 或中文语音评测前最少准备什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "通常先准备英文 Profile、短 Cover note、中文能力描述、60 秒普通话样音、一个转写或回答评分样例，以及官方入口和投递状态追踪表。"
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5f6877;
+      --line: #d9e0e8;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --green: #126b53;
+      --blue: #2754a4;
+      --amber: #b16600;
+      --red: #a33c2f;
+      --shadow: 0 18px 45px rgba(23, 32, 51, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247,248,245,.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    nav {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand { font-weight: 800; letter-spacing: 0; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 14px; color: var(--muted); }
+    .nav-links a { text-decoration: none; padding: 8px 10px; border-radius: 8px; }
+    .nav-links a:hover { background: #eaf0ec; color: var(--ink); }
+
+    .hero {
+      padding: 56px 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      gap: 30px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e6f0ea;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h1, h2, h3 { margin: 0; letter-spacing: 0; line-height: 1.1; }
+    h1 { margin-top: 18px; font-size: clamp(36px, 6vw, 68px); max-width: 820px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 20px; }
+    p { margin: 0; }
+    .lead {
+      margin-top: 18px;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .actions {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+      font: inherit;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--ink); color: #fff; }
+    .btn-line { background: #fff; color: var(--ink); border-color: var(--line); }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-amber { background: #fff7e6; color: #6b3b00; border-color: #f0c56f; }
+    .hero-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .hero-card .caption { padding: 14px 16px; color: var(--muted); font-size: 14px; }
+
+    section { padding: 42px 0; border-bottom: 1px solid var(--line); }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, .95fr) minmax(0, 1.05fr);
+      gap: 22px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .panel h2, .panel h3 { margin-bottom: 12px; }
+    label {
+      display: block;
+      margin: 13px 0 6px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #303847;
+    }
+    select, input, textarea {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font: inherit;
+      background: #fff;
+      color: var(--ink);
+    }
+    textarea { min-height: 112px; resize: vertical; }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .score-row {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      margin: 8px 0 18px;
+    }
+    .score {
+      min-height: 112px;
+      border-radius: 8px;
+      background: #edf3ff;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 900;
+    }
+    .meter { height: 12px; background: #e7ebf1; border-radius: 999px; overflow: hidden; }
+    .meter > span { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--red), var(--amber), var(--green)); }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .pill {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #f0f3f7;
+      color: #3b4655;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .pill.warn { background: #fff2d8; color: #704200; }
+    .pill.ok { background: #e6f1ea; color: var(--green); }
+    .output-block {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+    .output-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #273142;
+    }
+    .tiny { color: var(--muted); font-size: 13px; }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .resource {
+      display: block;
+      min-height: 144px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      text-decoration: none;
+    }
+    .resource strong { display: block; margin-bottom: 8px; font-size: 18px; }
+    .resource span { color: var(--muted); font-size: 14px; }
+    .official-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .official {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .official a { font-weight: 800; text-decoration: none; color: var(--blue); }
+    .cta-band {
+      background: #172033;
+      color: #fff;
+    }
+    .cta-band p { color: #cfd6df; max-width: 760px; margin-top: 12px; }
+    footer {
+      padding: 24px 0 34px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { color: var(--ink); }
+
+    @media (max-width: 840px) {
+      .hero-grid, .tool-grid, .resource-grid, .official-list { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .score-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      h1 { font-size: 40px; }
+      .btn { width: 100%; white-space: normal; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="./">AI Remote Data Job Kit</a>
+      <div class="nav-links">
+        <a href="#generator">生成材料</a>
+        <a href="#resources">样张下载</a>
+        <a href="#official">官方入口</a>
+        <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=39.90">39.90 申请包</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">AI Trainer / 中文语音评测 / 数据标注</span>
+          <h1>AI远程数据兼职申请材料生成器</h1>
+          <p class="lead">先判断你更适合哪类 AI 数据兼职，再生成英文 Profile、Cover note、样音准备、风险核对和投递追踪行。公开工具免费，完整申请包 39.90 元。</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#generator">开始生成申请材料</a>
+            <a class="btn btn-line" href="downloads/ai-remote-application-tracker-sample.csv">下载追踪表样张</a>
+            <a class="btn btn-amber" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=39.90&scenario=我想购买AI远程数据兼职申请包">购买 39.90 元申请包</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="assets/ai-remote-data-job-cover.png" alt="AI 远程数据兼职申请包封面">
+          <p class="caption">适合正在准备 AI Trainer、Mandarin speech、data annotation、transcription QA 和 search evaluator 项目的人。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="generator">
+      <div class="wrap tool-grid">
+        <form class="panel" id="jobForm">
+          <h2>填写申请条件</h2>
+          <p class="tiny">所有计算都在浏览器端完成，不上传你的个人信息。</p>
+
+          <div class="split">
+            <div>
+              <label for="target">目标方向</label>
+              <select id="target">
+                <option value="trainer">AI Trainer / AI Tutor</option>
+                <option value="speech">中文语音评测 / 样音项目</option>
+                <option value="qa">转写质检 / ASR Data Review</option>
+                <option value="labeling">数据标注 / Labeling QA</option>
+                <option value="search">搜索广告评估 / Search Evaluator</option>
+              </select>
+            </div>
+            <div>
+              <label for="background">你的背景</label>
+              <select id="background">
+                <option value="writing">写作 / 编辑 / 内容运营</option>
+                <option value="support">客服 / 社群 / 用户运营</option>
+                <option value="education">教育 / 培训 / 讲解</option>
+                <option value="moderation">审核 / 质检 / 标注</option>
+                <option value="product">产品 / 项目 / 研究</option>
+                <option value="newbie">暂时没有相关经历</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="split">
+            <div>
+              <label for="english">英文阅读沟通</label>
+              <select id="english">
+                <option value="8">能读懂岗位说明并写短邮件</option>
+                <option value="5">能借助翻译工具读说明</option>
+                <option value="2">英文阅读很吃力</option>
+              </select>
+            </div>
+            <div>
+              <label for="audio">语音条件</label>
+              <select id="audio">
+                <option value="8">普通话清楚，有安静录音环境</option>
+                <option value="5">普通话可以，但还没准备样音</option>
+                <option value="1">暂时不方便录音</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="split">
+            <div>
+              <label for="hours">每周可投入时间</label>
+              <select id="hours">
+                <option value="8">8 小时以上</option>
+                <option value="5">3-8 小时</option>
+                <option value="2">3 小时以内</option>
+              </select>
+            </div>
+            <div>
+              <label for="risk">合规和隐私边界</label>
+              <select id="risk">
+                <option value="8">会核对合同、付款、授权和隐私</option>
+                <option value="5">知道不能交押金，但缺检查表</option>
+                <option value="1">只想先找到能投的入口</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="facts">真实经历和材料</label>
+          <textarea id="facts">中文母语；做过内容整理、用户问题回复和资料校对；能远程兼职；想申请中文 AI Trainer 和语音评测项目。</textarea>
+
+          <label for="platform">优先核对的平台入口</label>
+          <select id="platform">
+            <option value="Outlier">Outlier</option>
+            <option value="DataAnnotation">DataAnnotation</option>
+            <option value="TELUS AI Community">TELUS AI Community</option>
+            <option value="RWS TrainAI">RWS TrainAI</option>
+            <option value="OneForma">OneForma</option>
+            <option value="LXT">LXT</option>
+            <option value="CrowdGen">CrowdGen</option>
+          </select>
+
+          <div class="actions">
+            <button class="btn btn-green" type="button" id="generateBtn">重新生成</button>
+            <button class="btn btn-line" type="button" id="downloadCsvBtn">下载当前追踪行 CSV</button>
+          </div>
+        </form>
+
+        <div class="panel" aria-live="polite">
+          <h2>生成结果</h2>
+          <div class="score-row">
+            <div class="score" id="score">78</div>
+            <div>
+              <h3 id="summaryTitle">优先投 AI Trainer / AI Tutor</h3>
+              <p class="tiny" id="summaryText">你适合先用中文表达、内容判断和规则理解切入。</p>
+              <div class="meter"><span id="meterBar"></span></div>
+              <div class="pill-row" id="pillRow"></div>
+            </div>
+          </div>
+
+          <div class="output-block">
+            <div class="output-head">
+              <h3>英文 Profile</h3>
+              <button class="btn btn-line" type="button" data-copy="profileOut">复制</button>
+            </div>
+            <pre id="profileOut"></pre>
+          </div>
+
+          <div class="output-block">
+            <div class="output-head">
+              <h3>Cover note</h3>
+              <button class="btn btn-line" type="button" data-copy="coverOut">复制</button>
+            </div>
+            <pre id="coverOut"></pre>
+          </div>
+
+          <div class="output-block">
+            <div class="output-head">
+              <h3>样音 / 测试准备</h3>
+              <button class="btn btn-line" type="button" data-copy="prepOut">复制</button>
+            </div>
+            <pre id="prepOut"></pre>
+          </div>
+
+          <div class="output-block">
+            <div class="output-head">
+              <h3>投递追踪行</h3>
+              <button class="btn btn-line" type="button" data-copy="trackerOut">复制</button>
+            </div>
+            <pre id="trackerOut"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="wrap">
+        <span class="eyebrow">Free samples</span>
+        <h2 style="margin-top: 12px;">公开样张</h2>
+        <div class="resource-grid">
+          <a class="resource" href="official-entry-checklist.md">
+            <strong>官方入口核对清单</strong>
+            <span>核对地区、合同、付款、押金、语音授权和隐私字段。</span>
+          </a>
+          <a class="resource" href="downloads/ai-remote-application-tracker-sample.csv">
+            <strong>投递追踪 CSV</strong>
+            <span>记录平台、岗位、链接、风险、材料缺口和下一步。</span>
+          </a>
+          <a class="resource" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-remote-data-job-pack.html">
+            <strong>39.90 元完整包</strong>
+            <span>岗位地图、Profile 模板、样音准备、平台筛选、避坑说明。</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="official">
+      <div class="wrap">
+        <span class="eyebrow">Official links first</span>
+        <h2 style="margin-top: 12px;">先打开官方入口再投递</h2>
+        <p class="lead">岗位页面变化快。下面只作为核对起点，是否有岗、是否接受地区、合同和付款方式都要以打开时的官方页面为准。</p>
+        <div class="official-list">
+          <div class="official"><a href="https://outlier.ai/" target="_blank" rel="noopener">Outlier AI</a><p class="tiny">AI training freelancer projects。</p></div>
+          <div class="official"><a href="https://www.dataannotation.tech/" target="_blank" rel="noopener">DataAnnotation</a><p class="tiny">AI training work and evaluator tasks。</p></div>
+          <div class="official"><a href="https://www.telusinternational.com/careers/ai-community" target="_blank" rel="noopener">TELUS AI Community</a><p class="tiny">AI community and rater roles。</p></div>
+          <div class="official"><a href="https://www.rws.com/artificial-intelligence/train-ai-data-services/trainai-community/" target="_blank" rel="noopener">RWS TrainAI</a><p class="tiny">Language and AI data community。</p></div>
+          <div class="official"><a href="https://www.oneforma.com/jobs/" target="_blank" rel="noopener">OneForma Jobs</a><p class="tiny">Data collection, linguistic and remote projects。</p></div>
+          <div class="official"><a href="https://crowdgen.com/" target="_blank" rel="noopener">CrowdGen by Appen</a><p class="tiny">Remote AI training and data tasks。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>需要完整申请包时再买</h2>
+        <p>39.90 元完整包包含岗位地图、Profile / Cover note 模板、样音和测试准备、平台筛选表、投递追踪表、避坑与合规清单。它不承诺录用，不代投递，不卖题库。</p>
+        <div class="actions">
+          <a class="btn btn-green" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=39.90&scenario=我想购买AI远程数据兼职申请包">生成 39.90 元订单</a>
+          <a class="btn btn-line" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-remote-job-fit-checker.html">主站适配评分器</a>
+          <a class="btn btn-line" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-remote-job-official-list.html">主站官方入口核对表</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Maintained by Ronnie2025. No login, no tracking.</span>
+      <span><a href="https://github.com/Ronnie2025/ai-remote-data-job-application-kit">GitHub</a> · <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/">Main sales site</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const roleMap = {
+      trainer: {
+        title: "优先投 AI Trainer / AI Tutor",
+        focus: "Chinese AI training data, response rating, annotation quality review, and short written rationales",
+        prep: ["准备 2 个中文回答评分样例", "写出为什么 A 回答比 B 回答更好", "练习按 helpfulness、accuracy、tone 和 safety 打分"]
+      },
+      speech: {
+        title: "优先投中文语音评测 / 样音项目",
+        focus: "Mandarin speech evaluation, voice data review, transcript checking, pronunciation, pacing, and tone feedback",
+        prep: ["录 60 秒标准普通话样音", "录 60 秒自然口语样音", "准备一段带错误类型备注的转写样例"]
+      },
+      qa: {
+        title: "优先投转写质检 / ASR Data Review",
+        focus: "Mandarin transcription QA, ASR data review, audio detail checking, and error categorization",
+        prep: ["整理 3 个错听、漏听、过度标准化例子", "练习保留口语信息而不是全部书面化", "准备噪声、停顿、口误的标注说明"]
+      },
+      labeling: {
+        title: "优先投数据标注 / Labeling QA",
+        focus: "data annotation, labeling QA, guideline following, edge case review, and concise label rationales",
+        prep: ["准备标签定义、正例、反例和边界例", "练习用一句话解释标注理由", "记录规则容易分歧的样本"]
+      },
+      search: {
+        title: "优先投搜索广告评估 / Search Evaluator",
+        focus: "Chinese search relevance, ads quality evaluation, content intent review, and web result judgment",
+        prep: ["列出熟悉的中文内容场景", "准备搜索意图和结果相关性例子", "避免泄露前公司或客户信息"]
+      }
+    };
+    const bgMap = {
+      writing: "writing, editing, content operations, and Chinese language review",
+      support: "customer support, user communication, issue triage, and scenario-based response review",
+      education: "education, training, explanation, and structured feedback",
+      moderation: "content moderation, quality review, annotation, and guideline-based judgment",
+      product: "product work, research, documentation, and structured project review",
+      newbie: "self-study, careful reading, and entry-level Chinese language review"
+    };
+
+    function state() {
+      return {
+        target: $("target").value,
+        background: $("background").value,
+        english: Number($("english").value),
+        audio: Number($("audio").value),
+        hours: Number($("hours").value),
+        risk: Number($("risk").value),
+        facts: $("facts").value.trim(),
+        platform: $("platform").value
+      };
+    }
+
+    function scoreFor(s) {
+      let score = 42 + s.english * 2 + s.hours * 2 + s.risk * 2;
+      if (["speech", "qa"].includes(s.target)) score += s.audio * 3;
+      else score += Math.min(8, s.audio);
+      if (s.background !== "newbie") score += 8;
+      if (s.facts.length > 70) score += 6;
+      return Math.max(30, Math.min(96, score));
+    }
+
+    function csvEscape(value) {
+      return `"${String(value).replaceAll('"', '""')}"`;
+    }
+
+    function makeOutputs() {
+      const s = state();
+      const role = roleMap[s.target];
+      const score = scoreFor(s);
+      const missing = [];
+      if (s.english < 6) missing.push("英文岗位说明阅读");
+      if (["speech", "qa"].includes(s.target) && s.audio < 6) missing.push("普通话样音");
+      if (s.risk < 6) missing.push("合同/押金/隐私核对");
+      if (s.hours < 6) missing.push("稳定任务时间");
+      const missingText = missing.length ? missing.join("、") : "材料基本齐，可以先投 1 个高匹配入口";
+
+      $("score").textContent = score;
+      $("summaryTitle").textContent = role.title;
+      $("summaryText").textContent = `当前材料缺口：${missingText}。先投 ${s.platform} 前，请重新打开官方页面核对地区、合同、付款和隐私要求。`;
+      $("meterBar").style.width = `${score}%`;
+      $("pillRow").innerHTML = [
+        `<span class="pill ok">${role.title.replace("优先投 ", "")}</span>`,
+        `<span class="pill">${score >= 75 ? "可开始投递" : "先补材料"}</span>`,
+        `<span class="pill warn">不交押金</span>`
+      ].join("");
+
+      $("profileOut").textContent =
+`I am a native Chinese speaker with experience in ${bgMap[s.background]}. I am interested in ${role.focus}.
+
+I can follow detailed project guidelines, review Chinese text or audio carefully, write concise rationales, and identify ambiguous cases where labels or ratings may become inconsistent.
+
+My current fit: ${s.facts}
+
+I am available for part-time remote, project-based, or task-based AI data work.`;
+
+      $("coverOut").textContent =
+`Hi,
+
+I am applying for the ${role.title.replace("优先投", "").trim()} project. I am a native Chinese speaker and I am interested in Chinese AI data evaluation, Mandarin language work, annotation QA, and language data quality tasks.
+
+I can follow project guidelines carefully, complete qualification tests as required, and review Chinese samples for accuracy, tone, intent, ambiguity, and safety boundaries.
+
+Before starting, I will confirm the official project page, region eligibility, contract type, payment method, privacy terms, and whether any voice or content samples will be used for model training.
+
+Best regards,
+[Name]`;
+
+      $("prepOut").textContent =
+`${role.prep.map((item, index) => `${index + 1}. ${item}`).join("\n")}
+${missing.length ? `\n优先补齐：${missingText}` : "\n下一步：选择 1 个官方入口投递，并记录反馈。"}
+
+风险底线：
+- 不交押金、培训费、激活费。
+- 不上传验证码、付款码、银行卡密码。
+- 不编造项目经验、平台名或客户名。
+- 不公开测试题原文。`;
+
+      const today = new Date().toISOString().slice(0, 10);
+      const row = [
+        today,
+        s.platform,
+        role.title.replace("优先投 ", ""),
+        "official page to verify",
+        score,
+        missingText,
+        "open official page and verify region contract payment privacy",
+        "not submitted"
+      ];
+      $("trackerOut").textContent = row.map(csvEscape).join(",");
+      return { row };
+    }
+
+    function downloadCurrentCsv() {
+      const { row } = makeOutputs();
+      const header = ["date","platform","target_role","official_link","fit_score","missing_materials","next_step","status"];
+      const csv = `${header.join(",")}\n${row.map(csvEscape).join(",")}\n`;
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "ai-remote-data-job-application-row.csv";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    document.querySelectorAll("select, textarea").forEach((el) => el.addEventListener("input", makeOutputs));
+    $("generateBtn").addEventListener("click", makeOutputs);
+    $("downloadCsvBtn").addEventListener("click", downloadCurrentCsv);
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const target = $(button.dataset.copy);
+        await navigator.clipboard.writeText(target.textContent);
+        const old = button.textContent;
+        button.textContent = "已复制";
+        setTimeout(() => { button.textContent = old; }, 1200);
+      });
+    });
+    makeOutputs();
+  </script>
+</body>
+</html>
