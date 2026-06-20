@@ -6,6 +6,10 @@ Public page:
 
 https://ronnie2025.github.io/ai-remote-data-job-application-kit/
 
+Public Gist guide:
+
+https://gist.github.com/Ronnie2025/2d51ab91fed03171ecdfa5e0551b30d6
+
 Main paid pack:
 
 https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-remote-data-job-pack.html
@@ -31,6 +35,8 @@ https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-remote-data-job-
 
 - `official-entry-checklist.md`
 - `downloads/ai-remote-application-tracker-sample.csv`
+- Public Gist guide, official platform checklist, and tracker template:
+  `https://gist.github.com/Ronnie2025/2d51ab91fed03171ecdfa5e0551b30d6`
 
 ## Paid pack
 
